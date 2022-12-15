@@ -80,81 +80,12 @@
         border: none;
         outline: none;
       }
-
-      .hero-pattern {
-        padding: 0px 10px;
-      }
-
       .bottom-part2 {
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-top: 1px solid rgb(185, 177, 177);
       }
-      .signBtn {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
-        margin: 20px 0px;
-      }
-      .signBtn button {
-        height: 45px;
-        background-color: white;
-        border: none;
-        border: 1px solid black;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-      }
-      .signBtn button img {
-        height: 80%;
-      }
-      .signBtn button span {
-        margin: 0 auto;
-      }
-      .divider {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-      }
-      .divider .line {
-        height: 2px;
-        background-color: gray;
-        flex: 1;
-      }
-
-      .login-section {
-        padding: 0px 10px;
-        margin: 60px 0px;
-      }
-
-      .login-email-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin: 20px 0px;
-      }
-
-      .login-email-container input,
-      .login-email-container button {
-        height: 45px;
-        border: none;
-        outline: none;
-      }
-
-      .login-email-container input {
-        border-bottom: 1px solid rgb(179, 179, 179);
-        color: gray;
-        padding: 0px 10px;
-      }
-
-      .login-email-container button {
-        background-color: black;
-        border-radius: 5px;
-        color: white;
-      }
-
       .social-links img {
         width: 25px;
       }
@@ -172,14 +103,6 @@
         align-items: center;
       }
 
-      .moving-image {
-        height: 650px;
-        background: url("https://static.lystit.com/static/n/img/sign-up/value-proposition-full-min.12502ad2e109c860f1eeceea2a988ddf.png");
-        background-repeat: repeat-y;
-        animation: scrollimage 48s linear infinite;
-        background-size: cover;
-      }
-
       .desktop-navbar {
         display: none;
       }
@@ -188,45 +111,90 @@
         display: none;
       }
 
-      .promotion-check{
+      .promotion-check {
         display: flex;
         gap: 10px;
       }
 
-      #declaration{
-        height: 25px;
-        width: 25px;
+      .image-section {
+        max-width: 2000px;
+        margin: 0 auto;
+      }
+      .image-section img {
+        width: 100%;
+      }
+      .main-infoShop {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      .infoShop {
+        display: flex;
+        background-color: rgb(234, 231, 231);
+        gap: 10px;
+        width: 100%;
+        overflow: auto;
+      }
+      .infoShop div {
+        flex-basis: 260px;
         flex-shrink: 0;
       }
-      #declaration + label{
-        font-size: 17px;
-      }
-      .sign-innerPart{
-        display: flex;
-        align-items:center;
-        gap: 10px;
-      }
-      .sign-innerPart p{
-         font-size: 22px;
-      }
-      .sign-innerPart span{
+      .infoShop h1 {
         font-size: 75px;
-        background-color: rgb(191, 182, 182);
-        border-radius: 50%;
       }
-      .back{
-          border: none;
-          background-color: white;
-        }
+      .infoShop h2 {
+        font-size: 35px;
+      }
 
-      @keyframes scrollimage {
-        0% {
-          background-position-y: 0;
-        }
-        100% {
-          background-position-y: -2448.05px;
-        }
+      .infoShop p {
+        font-size: 25px;
       }
+      .infoShop2 {
+        background-color: rgb(187, 250, 93);
+      }
+      .infoShop2 button {
+        display: flex;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        height: 60px;
+        width: 150px;
+        font-size: 25px;
+        align-items: center;
+        padding: 0px 40px;
+      }
+      .infoShop2 div {
+        padding: 20px 20px;
+
+        font-size: 25px;
+      }
+        .Brand-name h2{
+            width: 200px;
+        }
+        .Brand-name div{
+          display: flex;
+          gap: 150px;
+        }
+        .Brand-name h1{
+          transform: rotate(-90deg);
+          position: absolute;
+        }
+        .product-row{
+          display: flex;
+          overflow-x: auto;
+          overflow-y: hidden;
+        }
+        .card-product img{
+          height: 100%;
+        }
+        .card-product{
+          flex-shrink: 0;
+          height: 300px;
+          display: flex;
+        }
+        .card-product h1{
+          transform: rotate(-90deg);
+          width: 300px;
+        }
 
       @media screen and (min-width: 992px) {
         .mobile-navbar {
@@ -293,46 +261,9 @@
           font-size: 19px;
         }
 
-        .hero-pattern .moving-image {
-          display: none;
-        }
         .desktop-view {
           display: block;
         }
-        .login-section {
-          display: flex;
-          max-width: 1300px;
-          margin: 0 auto;
-          gap: 50px;
-        }
-        .moving-image {
-          flex: 3;
-          height: auto;
-        }
-
-        .login-form {
-          width: 445px;
-          flex-shrink: 0;
-          margin-top: 120px;
-          margin-bottom: 120px;
-          font-size: 25px;
-        }
-        .signup-form {
-          width: 445px;
-          flex-shrink: 0;
-          margin-top: 120px;
-          margin-bottom: 120px;
-          font-size: 25px;
-        }
-        .login-form button {
-          height: 60px;
-          font-size: 25px;
-        }
-        .signup-form button {
-          height: 60px;
-          font-size: 25px;
-        }
-
         .bottom-part2 {
           display: none;
         }
@@ -364,8 +295,21 @@
         .footer-links h4 {
           font-size: 25px;
         }
-        
-
+        .main-infoShop {
+          display: grid;
+          grid-template-columns: 7fr 4fr;
+        }
+        .infoShop {
+          justify-content: flex-end;
+        }
+        .infoShop2 div {
+          padding: 80px 50px;
+          width: 270px;
+          font-size: 25px;
+        }
+        .infoShop2 {
+          border-left: 1px solid black;
+        }
       }
     </style>
   </head>
@@ -424,75 +368,138 @@
         </div>
       </div>
     </header>
-
-    <section class="hero-pattern">
-      <!-- animation -->
-      <div class="moving-image"></div>
-    </section>
-    <section class="login-section">
-      <!-- <div class="login-form">
-        <h1>The only fashion site you need</h1>
-        <div class="login-email-container">
-          <label for="mailBox"> Email </label>
-          <input
-            type="text"
-            placeholder="Enter your email address to login or register"
-            id="mailBox"
-          />
-          <button>Continue</button>
-        </div>
-        <div class="divider">
-          <div class="line"></div>
-          <span>OR</span>
-          <div class="line"></div>
-        </div>
-        <div class="signBtn">
-          <button>
-            <img src="./icons/googleicon.svg" alt="" /><span
-              >Continue with Google</span
-            >
-          </button>
-          <button>
-            <img src="./icons/apple.svg" alt="" />
-            <span>Continue with Apple</span>
-          </button>
-          <button>
-            <img src="./icons/icons8-facebook.svg" alt="" /><span
-              >Continue with Facebook</span
-            >
-          </button>
-        </div>
-        <p>
-          By creating an account, you consent to gojoshop's Terms & Conditions.
-          To learn more about how gojoshop uses and protects your personal data,
-          please read gojoshop Privacy Policy.
-        </p>
-      </div> -->
-      <div class="signup-form">
-        <button class="back">❮ back</button>
-        <h1>Create an account</h1>
-        <div class="sign-innerPart">
-          <span class="material-symbols-outlined">
-            person
-            </span>
-          <div>
-          <p>demo@gmail</p>
-          <p><u>Change</u></p>
+    <section>
+      <div class="image-section">
+        <img
+          src="https://cdna.lystit.com/cms/EN_Default_460f2da2ac.png"
+          alt="Lyst - Banner 1 - W2A"
+        />
+      </div>
+      <div class="main-product-show">
+        <div class="product-row">
+          <div class="card-product">
+            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <img
+              src="	https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <img
+              src="	https://cdna.lystit.com/cms/Top_Lyst5th_U_Sand_IT_600x600_s_594ad2e245.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <img
+              src="https://cdna.lystit.com/cms/EA_7_Gift_Finder_4f3e2522b6.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <img
+              src="https://cdna.lystit.com/cms/HP_Top_Lyst_Banner_600x600_6bb8c2a582.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <img
+              src="https://cdna.lystit.com/cms/LYST_600x600_2_1_43b30fb898.jpg"
+              alt=""
+            />
+          </div>
+          </div>
+          <div class="product-row">
+            <div class="card-product">
+            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <img
+              src="	https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <img
+              src="https://cdna.lystit.com/cms/LYST_600x600_2_1_43b30fb898.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <img
+              src="	https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <img
+              src="	https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
+              alt=""
+            />
           </div>
         </div>
-        <div class="login-email-container">
-          <label for="mailBox"> Create a password </label>
-          <input type="password" placeholder="" id="mailBox" />
-
-          <button>Sign in</button>
+      </div>
+      <div class="main-infoShop">
+        <div class="infoShop">
+          <div>
+            <h1>1</h1>
+            <h2>The BIGGEST SELECTION</h2>
+            <p>Shop over 12,000 brands and stoes in one place.</p>
+            <p>
+              Find exactly what you want with powerful search and personal
+              recommendations
+            </p>
+          </div>
+          <div>
+            <h1>2</h1>
+            <h2>THE HOTTEST PRODUCTS</h2>
+            <p>See,what's new and what's trending.</p>
+            <p>
+              Hit the heart to receive alerts on the latestdrops from your
+              favourite brands
+            </p>
+          </div>
+          <div>
+            <h1>3</h1>
+            <h2>THE BEST PRICES</h2>
+            <p>
+              Compare prices and shipping options across thousands of stores.
+            </p>
+            <p>Lyst members are notified when an item goes on sale.</p>
+          </div>
         </div>
-        <div class="promotion-check">
-          <input type="checkbox" id="declaration" name="">
-          <label for="horns">I would like to hear about products,services,and sales,including personalized email alerts,from gojoshop.You can unsubscribe at any time.</label>
+        <div class="infoShop2">
+          <div>
+            <h1>SIGN UP FOR SMARTER SHOPPING</h1>
+            <button>
+              Join
+              <span class="material-symbols-outlined"> trending_flat </span>
+            </button>
+          </div>
         </div>
       </div>
-
-      <div class="desktop-view moving-image"></div>
+      <div class="Brand-name">
+        <h1>MOST WANTED</h1>
+        <div>
+          <h2>THE NORTH FACE NUPTSE JACKETS</h2>
+          <h2>HIGH WAISTED THONG BIKINIS</h2>
+          <h2>CORSET</h2>
+          <h2>THICK-SOLED SNEAKERS</h2>
+          <h2>TALL WOMENS LEATHER JACKETS</h2>
+        </div>
+        <div>
+         <h2>REEBOK INSTAPUMP SNEAKERS</h2>
+         <h2>OFF-WHILE CARAVAGGIO COLLECTION</h2>
+         <h2>BARBOUR POWELL JACKETS</h2>
+         <h2>CONVERSE JACK PURCELL SNEAKERS</h2>
+         <h2>ADIDAS TERREX</h2>
+        </div>
+     </div>
     </section>
     <footer>
       <div>
