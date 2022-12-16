@@ -29,7 +29,6 @@
 
       header {
         position: sticky;
-        z-index: 100;
         width: 100%;
         top: 0;
       }
@@ -117,113 +116,67 @@
         gap: 10px;
       }
 
-      .image-section {
-        max-width: 2000px;
+      .product-card button {
+        font-size: 25px;
+        color: white;
+        border: white;
+        background-color:red;
+        width: 100%;
+        height: 40px;
+        
+        
+      }
+
+      .product-card div {
+        border: 1px solid red;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        background-color: rgb(228, 228, 228);
+      }
+
+      .product-card > div {
+        width: 100%;
+      }
+
+      .product-card > div img {
+        width: 100%;
+      }
+
+      .product-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        place-items: center;
+        padding: 20px;
+        max-width: 1600px;
         margin: 0 auto;
       }
-      .image-section img {
-        width: 100%;
+      .product-card h3 {
+        padding: 0px 10px;
+        font-size: 22px;
+        text-decoration: underline;
       }
-      .main-infoShop {
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
+      .product-card p {
+        font-size: 20px;
+        padding: 0px 10px;
       }
-      .infoShop {
-        display: flex;
-        background-color: rgb(234, 231, 231);
-        gap: 10px;
-        width: 100%;
-        overflow: auto;
-      }
-      .infoShop div {
-        flex-basis: 260px;
-        flex-shrink: 0;
-      }
-      .infoShop h1 {
-        font-size: 75px;
-      }
-      .infoShop h2 {
-        font-size: 35px;
+      .product-card h4 {
+        font-size: 20px;
+        padding: 0px 10px;
       }
 
-      .infoShop p {
-        font-size: 25px;
-      }
-      .infoShop2 {
-        background-color: rgb(187, 250, 93);
-      }
-      .infoShop2 button {
-        display: flex;
-        background-color: black;
-        color: white;
-        border-radius: 10px;
-        height: 60px;
-        width: 150px;
-        font-size: 25px;
-        align-items: center;
-        padding: 0px 40px;
-      }
-      .infoShop2 div {
-        padding: 20px 20px;
-
-        font-size: 25px;
-      }
-      .Brand-name h2 {
-        width: 200px;
-      }
-      .Brand-name div {
-        display: flex;
-        gap: 150px;
-        overflow-x: auto;
-      }
-  
-      
-      .product-row {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-      }
-      .product-row::-webkit-scrollbar {
-        display: none;
-      }
-
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .product-row {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-      }
-      .card-product img {
-        height: 100%;
-      }
-      .card-product {
-        flex-shrink: 0;
-        height: 300px;
-        display: flex;
-        border-top: 1PX solid black;
-      }
-
-      .card-product .caption {
-        height: 300px;
-        overflow: hidden;
-        position: relative;
-        width: 100px;
-      }
-      .card-product h1 {
-        transform: rotate(-90deg);
-        width: 300px;
-        bottom: -11px;
-        font-weight: 400;
-        left: 100%;
-        line-height: 1;
-        padding: 5px;
-        position: absolute;
-        text-transform: uppercase;
-        transform: rotate(-90deg);
-        transform-origin: bottom left;
-        width: 300px;
+      @media screen and (min-width: 772px) {
+        .product-card {
+          grid-template-columns: 1fr 1fr;
+        }
       }
 
       @media screen and (min-width: 992px) {
+        .product-card {
+          grid-template-columns: 250px 250px 250px;
+          place-content: center;
+        }
+
         .mobile-navbar {
           display: none;
         }
@@ -322,20 +275,11 @@
         .footer-links h4 {
           font-size: 25px;
         }
-        .main-infoShop {
-          display: grid;
-          grid-template-columns: 7fr 4fr;
-        }
-        .infoShop {
-          justify-content: flex-end;
-        }
-        .infoShop2 div {
-          padding: 80px 50px;
-          width: 270px;
-          font-size: 25px;
-        }
-        .infoShop2 {
-          border-left: 1px solid black;
+      }
+
+      @media screen and (min-width: 1600px) {
+        .product-card {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
         }
       }
     </style>
@@ -395,164 +339,17 @@
         </div>
       </div>
     </header>
-    <section>
-      <div class="image-section">
-        <img
-          src="https://cdna.lystit.com/cms/EN_Default_460f2da2ac.png"
-          alt="Lyst - Banner 1 - W2A"
-        />
+    <section class="">
+      <div class="nav">
+        <h1>Shoping</h1>
+        <a href="./index.html">Home</a>
+        <a href="./cart.html">Cart</a>
       </div>
-      <div class="main-product-show">
-        <div class="product-row">
-          <div class="card-product">
-            <div class="caption">
-              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
-            </div>
-            <img
-              src="	https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
-              alt=""
-            />
-          </div>
-          <div class="card-product">
-            <div class="caption">
-              <h1>YOOX: GIFT TRENDS</h1>
-            </div>
-            <img
-              src="	https://cdna.lystit.com/cms/Top_Lyst5th_U_Sand_IT_600x600_s_594ad2e245.jpg"
-              alt=""
-            />
-          </div>
-          <div class="card-product">
-            <div class="caption">
-              <h1>EA7 FALL WINTER SALES: UP TO 40% OFF</h1>
-            </div>
-            <img
-              src="https://cdna.lystit.com/cms/EA_7_Gift_Finder_4f3e2522b6.jpg"
-              alt=""
-            />
-          </div>
-          <div class="card-product">
-            <div class="caption">
-              <h1>STONE ISLAND IFW-0_'022'23 COLLECTION</h1>
-            </div>
-            <img
-              src="https://cdna.lystit.com/cms/HP_Top_Lyst_Banner_600x600_6bb8c2a582.jpg"
-              alt=""
-            />
-          </div>
-          <div class="card-product">
-            <div class="caption">
-              <h1>MULBERRY : DISCOVER NEW MINI & MICROBAGS AT MULBERRY. MICRO SIZE, MAIXIMUM IMPACT.</h1>
-            </div>
-            <img
-              src="https://cdna.lystit.com/cms/LYST_600x600_2_1_43b30fb898.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="product-row">
-          <div class="card-product">
-            <div class="caption">
-              <h1>EA7 FALL WINTER SALES: UP TO 40% OFF</h1>
-            </div>
-            <img
-              src="https://cdna.lystit.com/cms/EA_7_Gift_Finder_4f3e2522b6.jpg"
-              alt=""
-            />
-          </div>
-          <div class="card-product">
-            <div class="caption">
-              <h1>MULBERRY : DISCOVER NEW MINI & MICROBAGS AT MULBERRY. MICRO SIZE, MAIXIMUM IMPACT</h1>
-            </div>
-            <img
-              src="https://cdna.lystit.com/cms/LYST_600x600_2_1_43b30fb898.jpg"
-              alt=""
-            />
-          </div>
-          <div class="card-product">
-            <div class="caption">
-              <h1>IN FOCUS : SURREAL LOEWE</h1>
-            </div>
-            <img
-              src="https://cdna.lystit.com/cms/2ef642f2_4104_43b7_8717_e2cd74581b19_4c6570163e.png"
-              alt=""
-            />
-          </div>
-          <div class="card-product">
-            <div class="caption">
-              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
-            </div>
-            <img
-              src="https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
-              alt=""
-            />
-          </div>
-          <div class="card-product">
-            <div class="caption">
-              <h1>TRENDING IN ASPEN</h1>
-            </div>
-            <img
-              src="https://cdna.lystit.com/cms/3c3d3937_f1dd_427c_ae5f_8a9cbb0788ee_45b3b02667.png"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div class="main-infoShop">
-        <div class="infoShop">
-          <div>
-            <h1>1</h1>
-            <h2>The BIGGEST SELECTION</h2>
-            <p>Shop over 12,000 brands and stoes in one place.</p>
-            <p>
-              Find exactly what you want with powerful search and personal
-              recommendations
-            </p>
-          </div>
-          <div>
-            <h1>2</h1>
-            <h2>THE HOTTEST PRODUCTS</h2>
-            <p>See,what's new and what's trending.</p>
-            <p>
-              Hit the heart to receive alerts on the latestdrops from your
-              favourite brands
-            </p>
-          </div>
-          <div>
-            <h1>3</h1>
-            <h2>THE BEST PRICES</h2>
-            <p>
-              Compare prices and shipping options across thousands of stores.
-            </p>
-            <p>Lyst members are notified when an item goes on sale.</p>
-          </div>
-        </div>
-        <div class="infoShop2">
-          <div>
-            <h1>SIGN UP FOR SMARTER SHOPPING</h1>
-            <button>
-              Join
-              <span class="material-symbols-outlined"> trending_flat </span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="Brand-name">
-       
-        <div>
-          <h2>THE NORTH FACE NUPTSE JACKETS</h2>
-          <h2>HIGH WAISTED THONG BIKINIS</h2>
-          <h2>CORSET</h2>
-          <h2>THICK-SOLED SNEAKERS</h2>
-          <h2>TALL WOMENS LEATHER JACKETS</h2>
-        </div>
-        <div>
-          <h2>REEBOK INSTAPUMP SNEAKERS</h2>
-          <h2>OFF-WHILE CARAVAGGIO COLLECTION</h2>
-          <h2>BARBOUR POWELL JACKETS</h2>
-          <h2>CONVERSE JACK PURCELL SNEAKERS</h2>
-          <h2>ADIDAS TERREX</h2>
-        </div>
+      <h1 id="total">
+        Your Total cart Price is:- <span id="cart-total">0</span>
+      </h1>
+      <div id="cart-container">
+        <!-- Here Append All the cart Products  -->
       </div>
     </section>
     <footer>
@@ -635,5 +432,8 @@
         </div>
       </div>
     </footer>
+    <script>
+
+    </script>
   </body>
 </html>
