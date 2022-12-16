@@ -29,6 +29,7 @@
 
       header {
         position: sticky;
+        z-index: 100;
         width: 100%;
         top: 0;
       }
@@ -167,34 +168,60 @@
 
         font-size: 25px;
       }
-        .Brand-name h2{
-            width: 200px;
-        }
-        .Brand-name div{
-          display: flex;
-          gap: 150px;
-        }
-        .Brand-name h1{
-          transform: rotate(-90deg);
-          position: absolute;
-        }
-        .product-row{
-          display: flex;
-          overflow-x: auto;
-          overflow-y: hidden;
-        }
-        .card-product img{
-          height: 100%;
-        }
-        .card-product{
-          flex-shrink: 0;
-          height: 300px;
-          display: flex;
-        }
-        .card-product h1{
-          transform: rotate(-90deg);
-          width: 300px;
-        }
+      .Brand-name h2 {
+        width: 200px;
+      }
+      .Brand-name div {
+        display: flex;
+        gap: 150px;
+      }
+      .Brand-name h1 {
+        transform: rotate(-90deg);
+        position: absolute;
+      }
+      .product-row {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+      .product-row::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .product-row {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .card-product img {
+        height: 100%;
+      }
+      .card-product {
+        flex-shrink: 0;
+        height: 300px;
+        display: flex;
+      }
+
+      .card-product .caption {
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        width: 100px;
+      }
+      .card-product h1 {
+        transform: rotate(-90deg);
+        width: 300px;
+        bottom: -11px;
+        font-weight: 400;
+        left: 100%;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        text-transform: uppercase;
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        width: 300px;
+      }
 
       @media screen and (min-width: 992px) {
         .mobile-navbar {
@@ -378,44 +405,56 @@
       <div class="main-product-show">
         <div class="product-row">
           <div class="card-product">
-            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <div class="caption">
+              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            </div>
             <img
               src="	https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
               alt=""
             />
           </div>
           <div class="card-product">
-            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <div class="caption">
+              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            </div>
             <img
               src="	https://cdna.lystit.com/cms/Top_Lyst5th_U_Sand_IT_600x600_s_594ad2e245.jpg"
               alt=""
             />
           </div>
           <div class="card-product">
-            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <div class="caption">
+              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            </div>
             <img
               src="https://cdna.lystit.com/cms/EA_7_Gift_Finder_4f3e2522b6.jpg"
               alt=""
             />
           </div>
           <div class="card-product">
-            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <div class="caption">
+              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            </div>
             <img
               src="https://cdna.lystit.com/cms/HP_Top_Lyst_Banner_600x600_6bb8c2a582.jpg"
               alt=""
             />
           </div>
           <div class="card-product">
-            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            <div class="caption">
+              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            </div>
             <img
               src="https://cdna.lystit.com/cms/LYST_600x600_2_1_43b30fb898.jpg"
               alt=""
             />
           </div>
-          </div>
-          <div class="product-row">
-            <div class="card-product">
-            <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+        </div>
+        <div class="product-row">
+          <div class="card-product">
+            <div class="caption">
+              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            </div>
             <img
               src="	https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
               alt=""
@@ -493,13 +532,13 @@
           <h2>TALL WOMENS LEATHER JACKETS</h2>
         </div>
         <div>
-         <h2>REEBOK INSTAPUMP SNEAKERS</h2>
-         <h2>OFF-WHILE CARAVAGGIO COLLECTION</h2>
-         <h2>BARBOUR POWELL JACKETS</h2>
-         <h2>CONVERSE JACK PURCELL SNEAKERS</h2>
-         <h2>ADIDAS TERREX</h2>
+          <h2>REEBOK INSTAPUMP SNEAKERS</h2>
+          <h2>OFF-WHILE CARAVAGGIO COLLECTION</h2>
+          <h2>BARBOUR POWELL JACKETS</h2>
+          <h2>CONVERSE JACK PURCELL SNEAKERS</h2>
+          <h2>ADIDAS TERREX</h2>
         </div>
-     </div>
+      </div>
     </section>
     <footer>
       <div>
