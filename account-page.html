@@ -24,6 +24,9 @@
 
       #brand-logo {
         width: 70px;
+      }
+
+      #logo-image {
         margin: 0 auto;
       }
 
@@ -188,36 +191,36 @@
         display: none;
       }
 
-      .promotion-check{
+      .promotion-check {
         display: flex;
         gap: 10px;
       }
 
-      #declaration{
+      #declaration {
         height: 25px;
         width: 25px;
         flex-shrink: 0;
       }
-      #declaration + label{
+      #declaration + label {
         font-size: 17px;
       }
-      .sign-innerPart{
+      .sign-innerPart {
         display: flex;
-        align-items:center;
+        align-items: center;
         gap: 10px;
       }
-      .sign-innerPart p{
-         font-size: 22px;
+      .sign-innerPart p {
+        font-size: 22px;
       }
-      .sign-innerPart span{
+      .sign-innerPart span {
         font-size: 75px;
         background-color: rgb(191, 182, 182);
         border-radius: 50%;
       }
-      .back{
-          border: none;
-          background-color: white;
-        }
+      .back {
+        border: none;
+        background-color: white;
+      }
 
       @keyframes scrollimage {
         0% {
@@ -364,8 +367,6 @@
         .footer-links h4 {
           font-size: 25px;
         }
-        
-
       }
     </style>
   </head>
@@ -375,11 +376,13 @@
         <div class="navbar1">
           <span class="material-symbols-outlined"> menu </span>
           <span class="material-symbols-outlined"> search </span>
-          <img
-            id="brand-logo"
-            src="./images/gojoshop-low-resolution-color-logo.png"
-            alt="brand logo"
-          />
+          <a id="logo-image" href="./index.html">
+            <img
+              id="brand-logo"
+              src="./images/gojoshop-low-resolution-color-logo.png"
+              alt="brand logo"
+            />
+          </a>
           <span class="material-symbols-outlined"> person </span>
         </div>
         <div class="search-bar hidden">
@@ -408,11 +411,13 @@
           </ul>
         </div>
         <div class="bottom-part">
-          <img
-            id="brand-logo"
-            src="./images/gojoshop-low-resolution-color-logo.png"
-            alt="brand logo"
-          />
+          <a href="./index.html">
+            <img
+              id="brand-logo"
+              src="./images/gojoshop-low-resolution-color-logo.png"
+              alt="brand logo"
+            />
+          </a>
           <div>Women</div>
           <div>Men</div>
           <div class="search-bar-main">
@@ -430,16 +435,16 @@
       <div class="moving-image"></div>
     </section>
     <section class="login-section">
-      <!-- <div class="login-form">
+      <div class="login-form">
         <h1>The only fashion site you need</h1>
         <div class="login-email-container">
-          <label for="mailBox"> Email </label>
+          <label> Email </label>
           <input
-            type="text"
+            type="email"
             placeholder="Enter your email address to login or register"
-            id="mailBox"
+            class="mailBox"
           />
-          <button>Continue</button>
+          <button id="continue-btn">Continue</button>
         </div>
         <div class="divider">
           <div class="line"></div>
@@ -467,31 +472,37 @@
           To learn more about how gojoshop uses and protects your personal data,
           please read gojoshop Privacy Policy.
         </p>
-      </div> -->
-      <div class="signup-form">
+      </div>
+      <div class="signup-form hidden">
         <button class="back">❮ back</button>
         <h1>Create an account</h1>
         <div class="sign-innerPart">
-          <span class="material-symbols-outlined">
-            person
-            </span>
+          <span class="material-symbols-outlined"> person </span>
           <div>
-          <p>demo@gmail</p>
-          <p><u>Change</u></p>
+            <p id="email-label"></p>
+            <p id="change-email"><u>Change</span></u></p>
           </div>
         </div>
         <div class="login-email-container">
-          <label for="mailBox"> Create a password </label>
-          <input type="password" placeholder="" id="mailBox" />
+          <label > Enter or Create a password </label>
+          <input type="password" placeholder="" class="mailBox" />
 
-          <button>Sign in</button>
+          <button class="login-btn">Log in</button>
+          <button class="signup-btn">Sign up</button>
         </div>
         <div class="promotion-check">
-          <input type="checkbox" id="declaration" name="">
-          <label for="horns">I would like to hear about products,services,and sales,including personalized email alerts,from gojoshop.You can unsubscribe at any time.</label>
+          <input type="checkbox" id="declaration" name="" />
+          <label for="horns"
+            >I would like to hear about products,services,and sales,including
+            personalized email alerts,from gojoshop.You can unsubscribe at any
+            time.</label
+          >
         </div>
       </div>
-
+      <div class="accountDetails">
+        <h2></h2>
+        <button class="logout-btn">Log out</button>
+      </div>
       <div class="desktop-view moving-image"></div>
     </section>
     <footer>
@@ -574,5 +585,106 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const continueBtn = document.querySelector("#continue-btn");
+      const emailInput = document.querySelector('.mailBox[type="email"]');
+      const passInput = document.querySelector('.mailBox[type="password"]');
+      const loginForm = document.querySelector(".login-form");
+      const signupForm = document.querySelector(".signup-form");
+      const backBtn = document.querySelector(".back");
+      const changeEmailBtn = document.querySelector("#change-email");
+      const emailLabel = document.querySelector("#email-label");
+      const signupBtn = document.querySelector(".signup-btn");
+      const loginBtn = document.querySelector(".login-btn");
+      const accountDetails = document.querySelector(".accountDetails");
+      const displayAccount = document.querySelector(".accountDetails h2");
+      const logoutBtn = document.querySelector(".accountDetails .logout-btn");
+
+
+      const usersList = JSON.parse(localStorage.getItem("users-list")) || [];
+      const isLoggedIn = JSON.parse(localStorage.getItem("loggedIn-User"));
+
+      let emailValue = "";
+
+      if(isLoggedIn){
+        loginUserDetails();
+      }
+
+      function loginUserDetails(){
+        loginForm.classList.add("hidden");
+        signupForm.classList.add("hidden");
+        accountDetails.classList.remove("hidden");
+        displayAccount.innerText = emailValue || isLoggedIn;
+      }
+
+
+      const validateEmail = (email) => {
+        return email.match(
+          /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+      };
+
+      continueBtn.addEventListener("click", (e) => {
+        if (emailInput.value === "" || !validateEmail(emailInput.value)) {
+          alert("Please Enter correct email");
+        } else {
+          emailValue = emailInput.value;
+          loginForm.classList.add("hidden");
+          signupForm.classList.remove("hidden");
+          emailLabel.innerText = emailValue;
+        }
+      });
+
+      backBtn.addEventListener("click", goBackAndChangeEmail);
+      changeEmailBtn.addEventListener("click", goBackAndChangeEmail);
+
+      function goBackAndChangeEmail(){
+        loginForm.classList.remove("hidden");
+        signupForm.classList.add("hidden");
+      }
+
+      signupBtn.addEventListener("click", (e)=>{
+        if(passInput.value === ""){
+          alert("Please Enter Password.");
+          return;
+        }
+        usersList.push({email: emailValue, password: passInput.value})
+        localStorage.setItem("users-list", JSON.stringify(usersList));
+        alert("Signup Successful. Now, you can Login");
+        goBackAndChangeEmail();
+
+      })
+
+      loginBtn.addEventListener("click", (e)=>{
+        if(passInput.value === ""){
+          alert("Please Enter Password.");
+          return;
+        }
+        let foundUser = false;
+        usersList.forEach(user=>{
+          if(user.email === emailValue && user.password === passInput.value){
+            foundUser = true;
+          }
+        })
+
+        if(foundUser){
+          alert("Login Successful.");
+          localStorage.setItem("loggedIn-User", JSON.stringify(emailValue));
+          loginUserDetails();
+        }
+        else{
+          alert("Please Signup first");
+        }
+      })
+
+      logoutBtn.addEventListener("click", (e)=>{
+        localStorage.removeItem("loggedIn-User");
+        localStorage.removeItem("cartItems");
+        goBackAndChangeEmail();
+        accountDetails.classList.add("hidden");
+      })
+
+    </script>
   </body>
 </html>

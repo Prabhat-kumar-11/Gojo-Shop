@@ -120,11 +120,9 @@
         font-size: 25px;
         color: white;
         border: white;
-        background-color:red;
+        background-color: red;
         width: 100%;
         height: 40px;
-        
-        
       }
 
       .product-card div {
@@ -192,6 +190,7 @@
         .desktop-navbar .top-part {
           display: flex;
           justify-content: flex-end;
+          align-items: center;
         }
 
         .desktop-navbar .top-part ul {
@@ -309,6 +308,14 @@
       </div>
       <div class="desktop-navbar">
         <div class="top-part">
+          <a href="./cart.html">
+            <span
+              style="font-size: 40px; cursor: pointer"
+              class="material-symbols-outlined"
+            >
+              shopping_cart
+            </span>
+          </a>
           <ul>
             <li>IN - US$</li>
             <li>
@@ -323,11 +330,13 @@
           </ul>
         </div>
         <div class="bottom-part">
-          <img
-            id="brand-logo"
-            src="./images/gojoshop-low-resolution-color-logo.png"
-            alt="brand logo"
-          />
+          <a href="./index.html">
+            <img
+              id="brand-logo"
+              src="./images/gojoshop-low-resolution-color-logo.png"
+              alt="brand logo"
+            />
+          </a>
           <div>Women</div>
           <div>Men</div>
           <div class="search-bar-main">
@@ -822,20 +831,44 @@
           price: "Rs.2,699.00",
         },
       ];
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
       let card = document.querySelector(".product-card");
-      arr_product.forEach((element) => {
+
+      const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      });
+      // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+      let value = params.gender; // "some_value"
+
+      let products = [...arr_product];
+
+      if (value === "male") {
+        products = products.slice(0, 20);
+      } else if (value === "female") {
+        products = products.slice(20);
+      }
+
+      products.forEach((element) => {
         let div = document.createElement("div");
         let image = document.createElement("img");
         let name = document.createElement("h3");
         let category = document.createElement("h4");
         let price = document.createElement("p");
         let cart = document.createElement("button");
-        cart.innerText = "Add to cart "
+
+        cart.addEventListener("click", (e) => {
+          cartItems.push(element);
+          localStorage.setItem("cartItems", JSON.stringify(cartItems));
+          alert("Added to cart successfully.");
+        });
+
+        cart.innerText = "Add to cart ";
         image.src = element.image;
         name.innerHTML = element.title;
         category.innerHTML = element.category;
         price.innerHTML = element.price;
-        div.append(image, name, category, price ,cart);
+        div.append(image, name, category, price, cart);
         card.append(div);
       });
     </script>

@@ -120,11 +120,9 @@
         font-size: 25px;
         color: white;
         border: white;
-        background-color:red;
+        background-color: red;
         width: 100%;
         height: 40px;
-        
-        
       }
 
       .product-card div {
@@ -138,8 +136,11 @@
         width: 100%;
       }
 
-      .product-card > div img {
+      .product-card >  img {
         width: 100%;
+        height: 250px;
+        display: block;
+        object-fit: contain;
       }
 
       .product-card {
@@ -173,7 +174,7 @@
 
       @media screen and (min-width: 992px) {
         .product-card {
-          grid-template-columns: 250px 250px 250px;
+          grid-template-columns: 1fr 1fr 1fr;
           place-content: center;
         }
 
@@ -279,7 +280,7 @@
 
       @media screen and (min-width: 1600px) {
         .product-card {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-columns: 1fr 1fr 1fr;
         }
       }
     </style>
@@ -341,13 +342,25 @@
     </header>
     <section class="">
       <div class="nav">
-        <h1>Shoping</h1>
-        <a href="./index.html">Home</a>
-        <a href="./cart.html">Cart</a>
+        <h1 style="font-size:35px;
+        text-align: center;
+        text-decoration: underline;">Cart Items</h1>
+ 
       </div>
-      <h1 id="total">
+      <div class="products-list">
+
+      </div>
+      <h1 id="total" style="text-align: center; font-size: 45px;">
         Your Total cart Price is:- <span id="cart-total">0</span>
       </h1>
+      <button class="payment" style="display: block;
+      width: fit-content;
+      margin: 20px auto;
+      font-size: 35px;
+      background-color: red;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 10px;">Proceed to checkout</button>
       <div id="cart-container">
         <!-- Here Append All the cart Products  -->
       </div>
@@ -433,6 +446,36 @@
       </div>
     </footer>
     <script>
+      let productsList = document.querySelector(".products-list");
+
+
+      let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const cartTotal = document.getElementById("cart-total");
+
+      let sum = 0;
+
+      cartItems.forEach((element) => {
+        let card = document.createElement("div");
+        card.classList.add("product-card");
+        let image = document.createElement("img");
+        let name = document.createElement("h3");
+        let price = document.createElement("p");
+        image.src = element.image;
+        name.innerText = element.title;
+        price.innerText = element.price;
+        card.append(image, name, price);
+        productsList.append(card);
+        let productPrice = element.price.split("Rs.")[1].split(",").join("");
+        sum += Number(productPrice);
+      });
+      let payment = document.querySelector(".payment");
+      payment.addEventListener("click",()=>{
+         alert("checkout is completed")
+         localStorage.removeItem("cartItems")
+         window.location.pathname = "index.html"
+      })
+
+      cartTotal.innerText = sum;
 
     </script>
   </body>
