@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+      html * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #brand-logo {
+        width: 70px;
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        width: 100%;
+        top: 0;
+      }
+
+      header > .mobile-navbar {
+        position: relative;
+      }
+
+      .navbar1 {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        background-color: white;
+        height: 65px;
+        padding: 0px 10px;
+      }
+
+      .search-bar {
+        background: rgba(63, 63, 63, 0.271);
+        width: 100%;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .search-bar-main {
+        height: 50px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 10px;
+        background-color: white;
+      }
+      .search-input {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        background-color: white;
+        padding: 4px;
+        border: 1px solid purple;
+      }
+
+      .search-input input {
+        width: 100%;
+        height: 30px;
+        border: none;
+        outline: none;
+      }
+      .bottom-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgb(185, 177, 177);
+      }
+      .social-links img {
+        width: 25px;
+      }
+      .store img {
+        width: 140px;
+        height: 45px;
+      }
+      footer {
+        padding: 10px 10px;
+        background-color: rgb(234, 232, 230);
+        border-top: 1px solid gray;
+      }
+      .small-icon {
+        display: flex;
+        align-items: center;
+      }
+
+      .desktop-navbar {
+        display: none;
+      }
+
+      .desktop-view {
+        display: none;
+      }
+
+      .promotion-check {
+        display: flex;
+        gap: 10px;
+      }
+
+      .product-card button {
+        font-size: 25px;
+        color: white;
+        border: white;
+        background-color: red;
+        width: 100%;
+        height: 40px;
+      }
+
+      .product-card div {
+        border: 1px solid red;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        background-color: rgb(228, 228, 228);
+      }
+
+      .product-card > div {
+        width: 100%;
+      }
+
+      .product-card >  img {
+        width: 100%;
+        height: 250px;
+        display: block;
+        object-fit: contain;
+      }
+
+      .product-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        place-items: center;
+        padding: 20px;
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+      .product-card h3 {
+        padding: 0px 10px;
+        font-size: 22px;
+        text-decoration: underline;
+      }
+      .product-card p {
+        font-size: 20px;
+        padding: 0px 10px;
+      }
+      .product-card h4 {
+        font-size: 20px;
+        padding: 0px 10px;
+      }
+
+      @media screen and (min-width: 772px) {
+        .product-card {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        .product-card {
+          grid-template-columns: 1fr 1fr 1fr;
+          place-content: center;
+        }
+
+        .mobile-navbar {
+          display: none;
+        }
+
+        .desktop-navbar {
+          display: block;
+          padding: 10px 20px;
+          padding-left: 50px;
+          background-color: white;
+          border-bottom: 1px solid black;
+        }
+
+        .desktop-navbar .top-part {
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .desktop-navbar .top-part ul {
+          list-style-type: none;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+
+        .desktop-navbar .top-part ul li {
+          display: flex;
+          align-items: center;
+          font-size: 18px;
+        }
+
+        .desktop-navbar .bottom-part {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          font-size: 25px;
+        }
+
+        .desktop-navbar .bottom-part #brand-logo {
+          width: 180px;
+          height: 70px;
+        }
+
+        .desktop-navbar .bottom-part .search-input {
+          width: 100%;
+          height: 60px;
+        }
+        .desktop-navbar .bottom-part .search-input input {
+          font-size: 18px;
+        }
+
+        .desktop-navbar .search-input span {
+          font-size: 30px;
+        }
+
+        .desktop-navbar .top-part ul li button {
+          height: 50px;
+          border-radius: 5px;
+          color: white;
+          background-color: black;
+          width: 170px;
+          font-size: 19px;
+        }
+
+        .desktop-view {
+          display: block;
+        }
+        .bottom-part2 {
+          display: none;
+        }
+
+        footer > div {
+          display: flex;
+          max-width: 1300px;
+          margin: 0 auto;
+        }
+
+        footer > div > div {
+          width: 50%;
+        }
+
+        .footer-links {
+          display: flex;
+          gap: 115px;
+        }
+
+        .footer-links ul {
+          list-style-type: none;
+
+          margin: 0;
+          padding: 0;
+        }
+        .footer-links li {
+          font-size: 20px;
+        }
+        .footer-links h4 {
+          font-size: 25px;
+        }
+      }
+
+      @media screen and (min-width: 1600px) {
+        .product-card {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="mobile-navbar">
+        <div class="navbar1">
+          <span class="material-symbols-outlined"> menu </span>
+          <span class="material-symbols-outlined"> search </span>
+          <img
+            id="brand-logo"
+            src="./images/gojoshop-low-resolution-color-logo.png"
+            alt="brand logo"
+          />
+          <span class="material-symbols-outlined"> person </span>
+        </div>
+        <div class="search-bar hidden">
+          <div class="search-bar-main">
+            <div class="search-input">
+              <span class="material-symbols-outlined"> search </span>
+              <input type="text" />
+            </div>
+            <span class="material-symbols-outlined"> close </span>
+          </div>
+        </div>
+      </div>
+      <div class="desktop-navbar">
+        <div class="top-part">
+          <ul>
+            <li>IN - US$</li>
+            <li>
+              Help
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </li>
+            <li>
+              <button><b>Sign up or log in</b></button>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom-part">
+          <img
+            id="brand-logo"
+            src="./images/gojoshop-low-resolution-color-logo.png"
+            alt="brand logo"
+          />
+          <div>Women</div>
+          <div>Men</div>
+          <div class="search-bar-main">
+            <div class="search-input">
+              <span class="material-symbols-outlined"> search </span>
+              <input type="text" placeholder='SEARCH (EG. "PK DRESSES")' />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="">
+      <div class="nav">
+        <h1 style="font-size:35px;
+        text-align: center;
+        text-decoration: underline;">Cart Items</h1>
+ 
+      </div>
+      <div class="products-list">
+
+      </div>
+      <h1 id="total" style="text-align: center; font-size: 45px;">
+        Your Total cart Price is:- <span id="cart-total">0</span>
+      </h1>
+      <button class="payment" style="display: block;
+      width: fit-content;
+      margin: 20px auto;
+      font-size: 35px;
+      background-color: red;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 10px;">Proceed to checkout</button>
+      <div id="cart-container">
+        <!-- Here Append All the cart Products  -->
+      </div>
+    </section>
+    <footer>
+      <div>
+        <div>
+          <p class="small-icon">
+            <span class="material-symbols-outlined"> star </span>Trustpilot
+          </p>
+          <div>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+          </div>
+          <p>
+            TrustScore <span><b>5.0</b></span>
+          </p>
+          <p>
+            <span><b>2,954</b></span> reviews
+          </p>
+          <div class="social-links">
+            <img src="./icons/square-facebook.svg" alt="fb icon" />
+            <img src="./icons/instagram.svg" alt="insta icon" />
+          </div>
+          <div class="store">
+            <img src="./icons/gplaystore.svg" alt="" />
+            <img src="./icons/app-store.png" alt="" />
+          </div>
+          <p>Learn about gojoshop app for iPhone,ipad and Android</p>
+          <p>© 2022 gojoshop</p>
+          <div class="bottom-part2">
+            <h3>International</h3>
+            <span class="material-symbols-outlined"> add </span>
+          </div>
+          <div class="bottom-part2">
+            <h3>Help and info</h3>
+            <span class="material-symbols-outlined"> add </span>
+          </div>
+        </div>
+        <div class="desktop-view footer-links">
+          <div>
+            <h4>INTERNATIONAL</h4>
+            <ul>
+              <li>Lyst - AU</li>
+              <li>Lyst - CA</li>
+              <li>Lyst - UK</li>
+              <li>Lyst - Österreich</li>
+              <li>Lyst - Schweiz</li>
+              <li>Lyst - Deutschland</li>
+              <li>Lyst - España</li>
+              <li>Lyst - France</li>
+              <li>Lyst - Italia</li>
+              <li>Lyst - 日本</li>
+              <li>Lyst - België</li>
+              <li>Lyst - Nederland</li>
+            </ul>
+          </div>
+          <div>
+            <h4>HELP AND INFO</h4>
+            <ul>
+              <li>Help center</li>
+              <li>About us</li>
+              <li>Shipping policy</li>
+              <li>Returns policy</li>
+              <li>Payments</li>
+              <li>Refund policy</li>
+              <li>Developers</li>
+              <li>Careers</li>
+              <li>Contact</li>
+              <li>Terms & conditions</li>
+              <li>Privacy & cookie policy</li>
+              <li>Intellectual property</li>
+              <li>Categories</li>
+              <li>Become a partner</li>
+              <li>Lyst Insights</li>
+              <li>Lyst News</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      let productsList = document.querySelector(".products-list");
+
+
+      let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const cartTotal = document.getElementById("cart-total");
+
+      let sum = 0;
+
+      cartItems.forEach((element) => {
+        let card = document.createElement("div");
+        card.classList.add("product-card");
+        let image = document.createElement("img");
+        let name = document.createElement("h3");
+        let price = document.createElement("p");
+        image.src = element.image;
+        name.innerText = element.title;
+        price.innerText = element.price;
+        card.append(image, name, price);
+        productsList.append(card);
+        let productPrice = element.price.split("Rs.")[1].split(",").join("");
+        sum += Number(productPrice);
+      });
+      let payment = document.querySelector(".payment");
+      payment.addEventListener("click",()=>{
+         alert("checkout is completed")
+         localStorage.removeItem("cartItems")
+         window.location.pathname = "index.html"
+      })
+
+      cartTotal.innerText = sum;
+
+    </script>
+  </body>
+</html>

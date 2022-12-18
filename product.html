@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+      html * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #brand-logo {
+        width: 70px;
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        width: 100%;
+        top: 0;
+      }
+
+      header > .mobile-navbar {
+        position: relative;
+      }
+
+      .navbar1 {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        background-color: white;
+        height: 65px;
+        padding: 0px 10px;
+      }
+
+      .search-bar {
+        background: rgba(63, 63, 63, 0.271);
+        width: 100%;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .search-bar-main {
+        height: 50px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 10px;
+        background-color: white;
+      }
+      .search-input {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        background-color: white;
+        padding: 4px;
+        border: 1px solid purple;
+      }
+
+      .search-input input {
+        width: 100%;
+        height: 30px;
+        border: none;
+        outline: none;
+      }
+      .bottom-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgb(185, 177, 177);
+      }
+      .social-links img {
+        width: 25px;
+      }
+      .store img {
+        width: 140px;
+        height: 45px;
+      }
+      footer {
+        padding: 10px 10px;
+        background-color: rgb(234, 232, 230);
+        border-top: 1px solid gray;
+      }
+      .small-icon {
+        display: flex;
+        align-items: center;
+      }
+
+      .desktop-navbar {
+        display: none;
+      }
+
+      .desktop-view {
+        display: none;
+      }
+
+      .promotion-check {
+        display: flex;
+        gap: 10px;
+      }
+
+      .product-card button {
+        font-size: 25px;
+        color: white;
+        border: white;
+        background-color: red;
+        width: 100%;
+        height: 40px;
+      }
+
+      .product-card div {
+        border: 1px solid red;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        background-color: rgb(228, 228, 228);
+      }
+
+      .product-card > div {
+        width: 100%;
+      }
+
+      .product-card > div img {
+        width: 100%;
+      }
+
+      .product-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        place-items: center;
+        padding: 20px;
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+      .product-card h3 {
+        padding: 0px 10px;
+        font-size: 22px;
+        text-decoration: underline;
+      }
+      .product-card p {
+        font-size: 20px;
+        padding: 0px 10px;
+      }
+      .product-card h4 {
+        font-size: 20px;
+        padding: 0px 10px;
+      }
+
+      @media screen and (min-width: 772px) {
+        .product-card {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        .product-card {
+          grid-template-columns: 250px 250px 250px;
+          place-content: center;
+        }
+
+        .mobile-navbar {
+          display: none;
+        }
+
+        .desktop-navbar {
+          display: block;
+          padding: 10px 20px;
+          padding-left: 50px;
+          background-color: white;
+          border-bottom: 1px solid black;
+        }
+
+        .desktop-navbar .top-part {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+
+        .desktop-navbar .top-part ul {
+          list-style-type: none;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+
+        .desktop-navbar .top-part ul li {
+          display: flex;
+          align-items: center;
+          font-size: 18px;
+        }
+
+        .desktop-navbar .bottom-part {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          font-size: 25px;
+        }
+
+        .desktop-navbar .bottom-part #brand-logo {
+          width: 180px;
+          height: 70px;
+        }
+
+        .desktop-navbar .bottom-part .search-input {
+          width: 100%;
+          height: 60px;
+        }
+        .desktop-navbar .bottom-part .search-input input {
+          font-size: 18px;
+        }
+
+        .desktop-navbar .search-input span {
+          font-size: 30px;
+        }
+
+        .desktop-navbar .top-part ul li button {
+          height: 50px;
+          border-radius: 5px;
+          color: white;
+          background-color: black;
+          width: 170px;
+          font-size: 19px;
+        }
+
+        .desktop-view {
+          display: block;
+        }
+        .bottom-part2 {
+          display: none;
+        }
+
+        footer > div {
+          display: flex;
+          max-width: 1300px;
+          margin: 0 auto;
+        }
+
+        footer > div > div {
+          width: 50%;
+        }
+
+        .footer-links {
+          display: flex;
+          gap: 115px;
+        }
+
+        .footer-links ul {
+          list-style-type: none;
+
+          margin: 0;
+          padding: 0;
+        }
+        .footer-links li {
+          font-size: 20px;
+        }
+        .footer-links h4 {
+          font-size: 25px;
+        }
+      }
+
+      @media screen and (min-width: 1600px) {
+        .product-card {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="mobile-navbar">
+        <div class="navbar1">
+          <span class="material-symbols-outlined"> menu </span>
+          <span class="material-symbols-outlined"> search </span>
+          <img
+            id="brand-logo"
+            src="./images/gojoshop-low-resolution-color-logo.png"
+            alt="brand logo"
+          />
+          <span class="material-symbols-outlined"> person </span>
+        </div>
+        <div class="search-bar hidden">
+          <div class="search-bar-main">
+            <div class="search-input">
+              <span class="material-symbols-outlined"> search </span>
+              <input type="text" />
+            </div>
+            <span class="material-symbols-outlined"> close </span>
+          </div>
+        </div>
+      </div>
+      <div class="desktop-navbar">
+        <div class="top-part">
+          <a href="./cart.html">
+            <span
+              style="font-size: 40px; cursor: pointer"
+              class="material-symbols-outlined"
+            >
+              shopping_cart
+            </span>
+          </a>
+          <ul>
+            <li>IN - US$</li>
+            <li>
+              Help
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </li>
+            <li>
+              <button><b>Sign up or log in</b></button>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom-part">
+          <a href="./index.html">
+            <img
+              id="brand-logo"
+              src="./images/gojoshop-low-resolution-color-logo.png"
+              alt="brand logo"
+            />
+          </a>
+          <div>Women</div>
+          <div>Men</div>
+          <div class="search-bar-main">
+            <div class="search-input">
+              <span class="material-symbols-outlined"> search </span>
+              <input type="text" placeholder='SEARCH (EG. "PK DRESSES")' />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="card-container">
+      <div class="product-card"></div>
+    </section>
+    <footer>
+      <div>
+        <div>
+          <p class="small-icon">
+            <span class="material-symbols-outlined"> star </span>Trustpilot
+          </p>
+          <div>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+          </div>
+          <p>
+            TrustScore <span><b>5.0</b></span>
+          </p>
+          <p>
+            <span><b>2,954</b></span> reviews
+          </p>
+          <div class="social-links">
+            <img src="./icons/square-facebook.svg" alt="fb icon" />
+            <img src="./icons/instagram.svg" alt="insta icon" />
+          </div>
+          <div class="store">
+            <img src="./icons/gplaystore.svg" alt="" />
+            <img src="./icons/app-store.png" alt="" />
+          </div>
+          <p>Learn about gojoshop app for iPhone,ipad and Android</p>
+          <p>© 2022 gojoshop</p>
+          <div class="bottom-part2">
+            <h3>International</h3>
+            <span class="material-symbols-outlined"> add </span>
+          </div>
+          <div class="bottom-part2">
+            <h3>Help and info</h3>
+            <span class="material-symbols-outlined"> add </span>
+          </div>
+        </div>
+        <div class="desktop-view footer-links">
+          <div>
+            <h4>INTERNATIONAL</h4>
+            <ul>
+              <li>Lyst - AU</li>
+              <li>Lyst - CA</li>
+              <li>Lyst - UK</li>
+              <li>Lyst - Österreich</li>
+              <li>Lyst - Schweiz</li>
+              <li>Lyst - Deutschland</li>
+              <li>Lyst - España</li>
+              <li>Lyst - France</li>
+              <li>Lyst - Italia</li>
+              <li>Lyst - 日本</li>
+              <li>Lyst - België</li>
+              <li>Lyst - Nederland</li>
+            </ul>
+          </div>
+          <div>
+            <h4>HELP AND INFO</h4>
+            <ul>
+              <li>Help center</li>
+              <li>About us</li>
+              <li>Shipping policy</li>
+              <li>Returns policy</li>
+              <li>Payments</li>
+              <li>Refund policy</li>
+              <li>Developers</li>
+              <li>Careers</li>
+              <li>Contact</li>
+              <li>Terms & conditions</li>
+              <li>Privacy & cookie policy</li>
+              <li>Intellectual property</li>
+              <li>Categories</li>
+              <li>Become a partner</li>
+              <li>Lyst Insights</li>
+              <li>Lyst News</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      let arr_product = [
+        {
+          id: 1,
+          title: "Loose Fit Wool-blend suit trousers",
+          category: "men_trousers_dressed",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/dc/f9/dcf939595fa082add4a32e4267d38e5da6b7a405.jpg],origin[dam],category[men_trousers_dressed],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.5,999.00",
+        },
+
+        {
+          id: 2,
+
+          title: "Waffled dressing gown",
+          category: "men_nightwearloungewear_dressing",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/6a/c8/6ac8b7ce85446783f5eb480e83a4e4ea66d02739.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,999.00",
+        },
+
+        {
+          id: 3,
+          title: "Relaxed Fit Lyocell shirt",
+          category: "men_shirts_longsleeved",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/86/b1/86b12f77e9d70967032d14bef7f5ce201098e4bc.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,299.00",
+        },
+
+        {
+          id: 4,
+          title: "Cotton poplin pyjamas",
+          category: "men_nightwearloungewear",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/78/c8/78c8b79aed30af7bde4646142767d57b5238c01f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,999.00",
+        },
+
+        {
+          id: 5,
+          title: "Relaxed Fit Hoodie",
+          category: "men_hoodiessweatshirts_hoodies",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/b2/c9/b2c9afc203aad0592d683c222a270539490ee77f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 6,
+          title: "Relaxed Fit Zip-through hoodie",
+          category: "men_hoodiessweatshirts_hoodies",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/71/9f/719f2a9e549a0eebdb175c6056da56c924ba8f14.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 7,
+
+          title: "Relaxed Fit Hoodie",
+          category: "men_hoodiessweatshirts_hoodies",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/29/fc/29fcb7493bcfa90fbdf1b20efe47f94433cd23fb.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 8,
+
+          title: "Relaxed Fit Overshirt",
+          category: "men_jacketscoats_shirtjackets",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/b7/fe/b7fe9813064567a7e305d9e5c5f98cb3482032b8.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,299.00",
+        },
+
+        {
+          id: 9,
+          title: "Relaxed Fit Sweatshirt",
+          category: "men_hoodiessweatshirts_sweatshirts",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/44/7a/447aa08dc4a909bdace73862a4d5465d98e16dd1.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.799.00",
+        },
+
+        {
+          id: 10,
+          title: "Relaxed Fit Hoodie",
+          category: "men_hoodiessweatshirts_hoodies",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/11/30/11307659a410cf5facf23894dbf6813ad60b0b4b.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,299.00",
+        },
+
+        {
+          id: 11,
+          title: "Relaxed Fit Overshirt",
+          category: "men_jacketscoats_shirtjackets",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/d2/21/d221d33ef5b1a13a109f6390874af4f536463bf2.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,299.00",
+        },
+
+        {
+          id: 12,
+
+          title: "Relaxed Fit Flannel shirt",
+          category: "men_shirts_longsleeved",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/1a/22/1a2295ba295087b5ba6521c1a987a06dae2ed21f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,999.00",
+        },
+
+        {
+          id: 13,
+          title: "Relaxed Fit Hoodie",
+          category: "men_hoodiessweatshirts_hoodies",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/6a/95/6a95d73e944f6f35eab4e26ab777f4bd423dcc8d.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,299.00",
+        },
+
+        {
+          id: 14,
+          title: "Water-repellent windbreaker",
+          category: "men_jacketscoats_function",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/9d/fa/9dfa67f777c1229d3895b0326bffbc97ff4f9199.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.3,999.00",
+        },
+
+        {
+          id: 15,
+          title: "Relaxed Fit Flannel shirt",
+          category: "men_shirts_longsleeved",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/6b/1c/6b1c02b86cf34107435878cf9086a7bfed1fa494.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,999.00",
+        },
+
+        {
+          id: 16,
+          title: "Relaxed Fit Jumper",
+          category: "men_cardigansjumpers_jumpers",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/24/72/247251f256f7b37931cfecb6a7b75882f5f617a7.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,299.00",
+        },
+
+        {
+          id: 17,
+          title: "Loose Fit Linen-blend trousers",
+          category: "men_trousers_linentrousers",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/5d/c3/5dc3ca0b34790710409081a9e0add794620de897.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,299.00",
+        },
+        {
+          id: 18,
+          title: "Water-repellent windbreaker",
+          category: "men_jacketscoats_function",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/e7/83/e783c7b1e11afd9d03a476be1954dbf318eed074.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,999.00",
+        },
+
+        {
+          id: 19,
+          title: "Suit waistcoat Slim Fit",
+          category: "men_blazerssuits_blazers",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/49/c1/49c1c08dfa28b19495deea33ac41c0946594c892.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 20,
+
+          title: "Relaxed Fit Sweatshirt",
+          category: "men_hoodiessweatshirts_sweatshirts",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/ac/75/ac750dc15d7154155dd01c201d25ae1c858b7585.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,999.00",
+        },
+        {
+          id: 1,
+          title: "Oversized collared cardigan",
+          category: "ladies_cardigansjumpers_cardigans",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/72/78/7278994a192a96d7d210c9cee44e3c2b52ce4b4a.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,699.00",
+        },
+
+        {
+          id: 2,
+          title: "Oversized hoodie",
+          category: "ladies_licence",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/90/6c/906c21d96fd92e86851a1498eb632e8b2d0b79b4.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,699.00",
+        },
+
+        {
+          id: 3,
+          title: "Flared ski trousers",
+          category: "ladies_trousers_flare",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/fb/7a/fb7abe57c8683e7d749c23bc9ab46a560795361f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.3,999.00",
+        },
+
+        {
+          id: 4,
+          title: "Oversized hoodie",
+          category: "ladies_basics",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/8b/dc/8bdc1ffe533ae3771a7cd20d9cf4171839e70740.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+        {
+          id: 5,
+          title: "Printed zip-top sweatshirt",
+          category: "ladies_divided_hoodiessweatshirts",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/3f/2c/3f2c6d435c6ccec1c21aba02e840f393b5a4d6c9.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 6,
+          title: "Printed T-shirt",
+          category: "ladies_divided_new_clothes",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/b2/19/b21973a9f3648136f6640267e382bc1d3de82ed3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,299.00",
+        },
+        {
+          id: 7,
+          title: "Stand-up collar satin blouse",
+          category: "ladies_shirtsblouses_blouses",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/d1/94/d1941eeb6e45c7a066278be49d7384d311f82d97.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,299.00",
+        },
+
+        {
+          id: 8,
+
+          title: "Teddy hoodie",
+          category: "ladies_hoodiesswetshirts_hoodies",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/c2/f9/c2f9f46fef6f7b04a60d902981fa0906e3e8934f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,999.00",
+        },
+
+        {
+          id: 9,
+          title: "Sequined bodycon dress",
+          category: "ladies_dresses_bodycon",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/eb/09/eb09e615933d0cd56d3371a7933dc54213448e47.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.4,499.00",
+        },
+
+        {
+          id: 10,
+          title: "Satin dress",
+          category: "ladies_dresses_shortdresses",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/b4/9c/b49c77cb3d31c7cc390445c3b0b26f16cb0f567a.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 11,
+          title: "Hoodie",
+          category: "ladies_basics_tops_longsleeve",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/0c/7b/0c7b262663c3ef62f4091c5b699b7406c9d5db61.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 12,
+          title: "Lace-detail satin bustier top",
+          category: "ladies_divided_new_clothes",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/63/4c/634cb0f96c2a5525a281efa91a4ef640d226164e.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.999.00",
+        },
+
+        {
+          id: 13,
+          title: "High Waist Denim shorts",
+          category: "Ladies_shorts_highwaisted",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/3f/42/3f424fcc703110de1dacabf437039777602c00be.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 14,
+          title: "Viscose polo-neck top",
+          category: "ladies_tops_longsleeve",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/78/d2/78d290d6f4f2d80984ff16d3f647294090037457.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.799.00",
+        },
+
+        {
+          id: 15,
+          title: "Pleated wrapover dress",
+          category: "Ladies_dresses_wrap",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/60/f4/60f406262eb04b742c36b624a930b9468dfd1922.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,999.00",
+        },
+
+        {
+          id: 16,
+
+          title: "Oversized corduroy shirt",
+          category: "ladies_shirtsblouses_shirts",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/02/06/020675ae877e5a909bbe8aed3bcebe3f47d067b6.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,999.00",
+        },
+
+        {
+          id: 17,
+          title: "Fluffy-knit bodycon dress",
+          category: "ladies_dresses_shortdresses",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/94/68/94686aefab7b33513ef389f720863718f5a70566.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,999.00",
+        },
+
+        {
+          id: 18,
+          title: "Zip-top teddy sweatshirt",
+          category: "ladies_basics_tops_longsleeve",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/13/99/1399d29191d47ac9b0fe288771a961595061f22f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 19,
+          title: "Zip-top rib-knit jumper",
+          category: "ladies_cardigansjumpers_jumpers",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/f1/d1/f1d1cb8c4b3ca76266744e6bae85704bc26e0656.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,999.00",
+        },
+
+        {
+          id: 20,
+          title: "H&M+ Puff-sleeved dress",
+          category: "ladies_dresses_puffsleeve",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/f8/72/f872532fb2eefc09057b2b400e4ef9e65de0aad3.jpg],origin[dam],category[ladies_dresses_shortdresses],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,999.00",
+        },
+
+        {
+          id: 21,
+          title: "Rib-knit bodycon dress",
+          category: "ladies_dresses_longsleevedress",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/e5/6e/e56efab90cbb4cd0c8a795eacdcffd781e4fad86.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,299.00",
+        },
+        {
+          id: 22,
+          title: "Sequined skirt",
+          category: "Ladies_skirts_highwaisted",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/8d/5b/8d5bdad329033aa60e25bbd8e5da8ba7351aa9bd.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,299.00",
+        },
+
+        {
+          id: 23,
+          title: "Printed sweatshirt",
+          category: "ladies_hoodiesswetshirts_sweatshirts",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/54/1a/541a7b89ed999ea53c65c6d12cadde285b4fd1b8.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.1,499.00",
+        },
+
+        {
+          id: 24,
+          title: "Sports jacket in DryMove™",
+          category: "ladies_sport_tops_longsleeve",
+          image:
+            "//lp2.hm.com/hmgoepprod?set=source[/37/36/3736dd81811ee97bc0b4fdfafb40b6111d53d1f6.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+          price: "Rs.2,699.00",
+        },
+      ];
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      let card = document.querySelector(".product-card");
+
+      const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      });
+      // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+      let value = params.gender; // "some_value"
+
+      let products = [...arr_product];
+
+      if (value === "male") {
+        products = products.slice(0, 20);
+      } else if (value === "female") {
+        products = products.slice(20);
+      }
+
+      products.forEach((element) => {
+        let div = document.createElement("div");
+        let image = document.createElement("img");
+        let name = document.createElement("h3");
+        let category = document.createElement("h4");
+        let price = document.createElement("p");
+        let cart = document.createElement("button");
+
+        cart.addEventListener("click", (e) => {
+          cartItems.push(element);
+          localStorage.setItem("cartItems", JSON.stringify(cartItems));
+          alert("Added to cart successfully.");
+        });
+
+        cart.innerText = "Add to cart ";
+        image.src = element.image;
+        name.innerHTML = element.title;
+        category.innerHTML = element.category;
+        price.innerHTML = element.price;
+        div.append(image, name, category, price, cart);
+        card.append(div);
+      });
+    </script>
+  </body>
+</html>

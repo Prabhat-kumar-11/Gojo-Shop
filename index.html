@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+      html * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #brand-logo {
+        width: 70px;
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        z-index: 100;
+        width: 100%;
+        top: 0;
+      }
+
+      header > .mobile-navbar {
+        position: relative;
+      }
+
+      .navbar1 {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        background-color: white;
+        height: 65px;
+        padding: 0px 10px;
+      }
+
+      .search-bar {
+        background: rgba(63, 63, 63, 0.271);
+        width: 100%;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .search-bar-main {
+        height: 50px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 10px;
+        background-color: white;
+      }
+      .search-input {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        background-color: white;
+        padding: 4px;
+        border: 1px solid purple;
+      }
+
+      .search-input input {
+        width: 100%;
+        height: 30px;
+        border: none;
+        outline: none;
+      }
+      .bottom-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgb(185, 177, 177);
+      }
+      .social-links img {
+        width: 25px;
+      }
+      .store img {
+        width: 140px;
+        height: 45px;
+      }
+      footer {
+        padding: 10px 10px;
+        background-color: rgb(234, 232, 230);
+        border-top: 1px solid gray;
+      }
+      .small-icon {
+        display: flex;
+        align-items: center;
+      }
+
+      .desktop-navbar {
+        display: none;
+      }
+
+      .desktop-view {
+        display: none;
+      }
+
+      .promotion-check {
+        display: flex;
+        gap: 10px;
+      }
+
+      .image-section {
+        max-width: 2000px;
+        margin: 0 auto;
+      }
+      .image-section img {
+        width: 100%;
+      }
+      .main-infoShop {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      .infoShop {
+        display: flex;
+        background-color: rgb(234, 231, 231);
+        gap: 10px;
+        width: 100%;
+        overflow: auto;
+      }
+      .infoShop div {
+        flex-basis: 260px;
+        flex-shrink: 0;
+      }
+      .infoShop h1 {
+        font-size: 75px;
+      }
+      .infoShop h2 {
+        font-size: 35px;
+      }
+
+      .infoShop p {
+        font-size: 25px;
+      }
+      .infoShop2 {
+        background-color: rgb(187, 250, 93);
+      }
+      .infoShop2 button {
+        display: flex;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        height: 60px;
+        width: 150px;
+        font-size: 25px;
+        align-items: center;
+        padding: 0px 40px;
+      }
+      .infoShop2 div {
+        padding: 20px 20px;
+
+        font-size: 25px;
+      }
+      .Brand-name h2 {
+        width: 200px;
+      }
+      .Brand-name div {
+        display: flex;
+        gap: 150px;
+        overflow-x: auto;
+      }
+
+      .product-row {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+      .product-row::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .product-row {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .card-product img {
+        height: 100%;
+      }
+      .card-product {
+        flex-shrink: 0;
+        height: 300px;
+        display: flex;
+        border-top: 1px solid black;
+      }
+
+      .card-product .caption {
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        width: 100px;
+      }
+      .card-product h1 {
+        transform: rotate(-90deg);
+        width: 300px;
+        bottom: -11px;
+        font-weight: 400;
+        left: 100%;
+        line-height: 1;
+        padding: 5px;
+        position: absolute;
+        text-transform: uppercase;
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        width: 300px;
+      }
+
+      @media screen and (min-width: 992px) {
+        .mobile-navbar {
+          display: none;
+        }
+
+        .desktop-navbar {
+          display: block;
+          padding: 10px 20px;
+          padding-left: 50px;
+          background-color: white;
+          border-bottom: 1px solid black;
+        }
+
+        .desktop-navbar .top-part {
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .desktop-navbar .top-part ul {
+          list-style-type: none;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+
+        .desktop-navbar .top-part ul li {
+          display: flex;
+          align-items: center;
+          font-size: 18px;
+        }
+
+        .desktop-navbar .bottom-part {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          font-size: 25px;
+        }
+
+        .desktop-navbar .bottom-part #brand-logo {
+          width: 180px;
+          height: 70px;
+        }
+
+        .desktop-navbar .bottom-part .search-input {
+          width: 100%;
+          height: 60px;
+        }
+        .desktop-navbar .bottom-part .search-input input {
+          font-size: 18px;
+        }
+
+        .desktop-navbar .search-input span {
+          font-size: 30px;
+        }
+
+        .desktop-navbar .top-part ul li button {
+          height: 50px;
+          border-radius: 5px;
+          color: white;
+          background-color: black;
+          width: 170px;
+          font-size: 19px;
+        }
+
+        .desktop-view {
+          display: block;
+        }
+        .bottom-part2 {
+          display: none;
+        }
+
+        footer > div {
+          display: flex;
+          max-width: 1300px;
+          margin: 0 auto;
+        }
+
+        footer > div > div {
+          width: 50%;
+        }
+
+        .footer-links {
+          display: flex;
+          gap: 115px;
+        }
+
+        .footer-links ul {
+          list-style-type: none;
+
+          margin: 0;
+          padding: 0;
+        }
+        .footer-links li {
+          font-size: 20px;
+        }
+        .footer-links h4 {
+          font-size: 25px;
+        }
+        .main-infoShop {
+          display: grid;
+          grid-template-columns: 7fr 4fr;
+        }
+        .infoShop {
+          justify-content: flex-end;
+        }
+        .infoShop2 div {
+          padding: 80px 50px;
+          width: 270px;
+          font-size: 25px;
+        }
+        .infoShop2 {
+          border-left: 1px solid black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="mobile-navbar">
+        <div class="navbar1">
+          <span class="material-symbols-outlined"> menu </span>
+          <span class="material-symbols-outlined"> search </span>
+          <img
+            id="brand-logo"
+            src="./images/gojoshop-low-resolution-color-logo.png"
+            alt="brand logo"
+          />
+          <a href="./account-page.html">
+            <span class="material-symbols-outlined"> person </span>
+          </a>
+        </div>
+        <div class="search-bar hidden">
+          <div class="search-bar-main">
+            <div class="search-input">
+              <span class="material-symbols-outlined"> search </span>
+              <input type="text" />
+            </div>
+            <span class="material-symbols-outlined"> close </span>
+          </div>
+        </div>
+      </div>
+      <div class="desktop-navbar">
+        <div class="top-part">
+          <ul>
+            <li>IN - US$</li>
+            <li>
+              Help
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </li>
+            <li>
+              <a href="./account-page.html">
+                <button><b>Sign up or log in</b></button>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom-part">
+          <a href="./product.html">
+            <img
+              id="brand-logo"
+              src="./images/gojoshop-low-resolution-color-logo.png"
+              alt="brand logo"
+            />
+          </a>
+          <div><a href="./product.html?gender=female">Women</a></div>
+          <div><a href="./product.html?gender=male">Men</a></div>
+          <div class="search-bar-main">
+            <div class="search-input">
+              <span class="material-symbols-outlined"> search </span>
+              <input type="text" placeholder='SEARCH (EG. "PK DRESSES")' />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="image-section">
+        <img
+          src="https://cdna.lystit.com/cms/EN_Default_460f2da2ac.png"
+          alt="Lyst - Banner 1 - W2A"
+        />
+      </div>
+      <div class="main-product-show">
+        <div class="product-row">
+          <div class="card-product">
+            <div class="caption">
+              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            </div>
+            <img
+              src="	https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <div class="caption">
+              <h1>YOOX: GIFT TRENDS</h1>
+            </div>
+            <img
+              src="	https://cdna.lystit.com/cms/Top_Lyst5th_U_Sand_IT_600x600_s_594ad2e245.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <div class="caption">
+              <h1>EA7 FALL WINTER SALES: UP TO 40% OFF</h1>
+            </div>
+            <img
+              src="https://cdna.lystit.com/cms/EA_7_Gift_Finder_4f3e2522b6.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <div class="caption">
+              <h1>STONE ISLAND IFW-0_'022'23 COLLECTION</h1>
+            </div>
+            <img
+              src="https://cdna.lystit.com/cms/HP_Top_Lyst_Banner_600x600_6bb8c2a582.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <div class="caption">
+              <h1>
+                MULBERRY : DISCOVER NEW MINI & MICROBAGS AT MULBERRY. MICRO
+                SIZE, MAIXIMUM IMPACT.
+              </h1>
+            </div>
+            <img
+              src="https://cdna.lystit.com/cms/LYST_600x600_2_1_43b30fb898.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="product-row">
+          <div class="card-product">
+            <div class="caption">
+              <h1>EA7 FALL WINTER SALES: UP TO 40% OFF</h1>
+            </div>
+            <img
+              src="https://cdna.lystit.com/cms/EA_7_Gift_Finder_4f3e2522b6.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <div class="caption">
+              <h1>
+                MULBERRY : DISCOVER NEW MINI & MICROBAGS AT MULBERRY. MICRO
+                SIZE, MAIXIMUM IMPACT
+              </h1>
+            </div>
+            <img
+              src="https://cdna.lystit.com/cms/LYST_600x600_2_1_43b30fb898.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <div class="caption">
+              <h1>IN FOCUS : SURREAL LOEWE</h1>
+            </div>
+            <img
+              src="https://cdna.lystit.com/cms/2ef642f2_4104_43b7_8717_e2cd74581b19_4c6570163e.png"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <div class="caption">
+              <h1>DISCOVER THE PRADA HOLIDAY MEN'S COLLECTION</h1>
+            </div>
+            <img
+              src="https://cdna.lystit.com/cms/600x600_Affiliate_Prada_Holiday_BU_1_1_e41fdd0245.jpg"
+              alt=""
+            />
+          </div>
+          <div class="card-product">
+            <div class="caption">
+              <h1>TRENDING IN ASPEN</h1>
+            </div>
+            <img
+              src="https://cdna.lystit.com/cms/3c3d3937_f1dd_427c_ae5f_8a9cbb0788ee_45b3b02667.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="main-infoShop">
+        <div class="infoShop">
+          <div>
+            <h1>1</h1>
+            <h2>The BIGGEST SELECTION</h2>
+            <p>Shop over 12,000 brands and stoes in one place.</p>
+            <p>
+              Find exactly what you want with powerful search and personal
+              recommendations
+            </p>
+          </div>
+          <div>
+            <h1>2</h1>
+            <h2>THE HOTTEST PRODUCTS</h2>
+            <p>See,what's new and what's trending.</p>
+            <p>
+              Hit the heart to receive alerts on the latestdrops from your
+              favourite brands
+            </p>
+          </div>
+          <div>
+            <h1>3</h1>
+            <h2>THE BEST PRICES</h2>
+            <p>
+              Compare prices and shipping options across thousands of stores.
+            </p>
+            <p>Lyst members are notified when an item goes on sale.</p>
+          </div>
+        </div>
+        <div class="infoShop2">
+          <div>
+            <h1>SIGN UP FOR SMARTER SHOPPING</h1>
+            <button>
+              Join
+              <span class="material-symbols-outlined"> trending_flat </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="Brand-name">
+        <div>
+          <h2>THE NORTH FACE NUPTSE JACKETS</h2>
+          <h2>HIGH WAISTED THONG BIKINIS</h2>
+          <h2>CORSET</h2>
+          <h2>THICK-SOLED SNEAKERS</h2>
+          <h2>TALL WOMENS LEATHER JACKETS</h2>
+        </div>
+        <div>
+          <h2>REEBOK INSTAPUMP SNEAKERS</h2>
+          <h2>OFF-WHILE CARAVAGGIO COLLECTION</h2>
+          <h2>BARBOUR POWELL JACKETS</h2>
+          <h2>CONVERSE JACK PURCELL SNEAKERS</h2>
+          <h2>ADIDAS TERREX</h2>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div>
+        <div>
+          <p class="small-icon">
+            <span class="material-symbols-outlined"> star </span>Trustpilot
+          </p>
+          <div>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+            <span class="material-symbols-outlined"> stars </span>
+          </div>
+          <p>
+            TrustScore <span><b>5.0</b></span>
+          </p>
+          <p>
+            <span><b>2,954</b></span> reviews
+          </p>
+          <div class="social-links">
+            <img src="./icons/square-facebook.svg" alt="fb icon" />
+            <img src="./icons/instagram.svg" alt="insta icon" />
+          </div>
+          <div class="store">
+            <img src="./icons/gplaystore.svg" alt="" />
+            <img src="./icons/app-store.png" alt="" />
+          </div>
+          <p>Learn about gojoshop app for iPhone,ipad and Android</p>
+          <p>© 2022 gojoshop</p>
+          <div class="bottom-part2">
+            <h3>International</h3>
+            <span class="material-symbols-outlined"> add </span>
+          </div>
+          <div class="bottom-part2">
+            <h3>Help and info</h3>
+            <span class="material-symbols-outlined"> add </span>
+          </div>
+        </div>
+        <div class="desktop-view footer-links">
+          <div>
+            <h4>INTERNATIONAL</h4>
+            <ul>
+              <li>Lyst - AU</li>
+              <li>Lyst - CA</li>
+              <li>Lyst - UK</li>
+              <li>Lyst - Österreich</li>
+              <li>Lyst - Schweiz</li>
+              <li>Lyst - Deutschland</li>
+              <li>Lyst - España</li>
+              <li>Lyst - France</li>
+              <li>Lyst - Italia</li>
+              <li>Lyst - 日本</li>
+              <li>Lyst - België</li>
+              <li>Lyst - Nederland</li>
+            </ul>
+          </div>
+          <div>
+            <h4>HELP AND INFO</h4>
+            <ul>
+              <li>Help center</li>
+              <li>About us</li>
+              <li>Shipping policy</li>
+              <li>Returns policy</li>
+              <li>Payments</li>
+              <li>Refund policy</li>
+              <li>Developers</li>
+              <li>Careers</li>
+              <li>Contact</li>
+              <li>Terms & conditions</li>
+              <li>Privacy & cookie policy</li>
+              <li>Intellectual property</li>
+              <li>Categories</li>
+              <li>Become a partner</li>
+              <li>Lyst Insights</li>
+              <li>Lyst News</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
